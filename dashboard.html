@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern 3D Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef2f5;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background: linear-gradient(180deg, #006400, #228B22);
+            height: 100vh;
+            color: white;
+            transition: all 0.3s;
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar .nav-link {
+            color: #c9d1da;
+            margin: 10px 0;
+            transition: 0.3s;
+        }
+
+        .sidebar .nav-link:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #228B22;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white;
+        }
+
+        .navbar-custom .form-control {
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .navbar-custom .btn-icon {
+            color: white;
+            margin-left: 10px;
+        }
+
+        .navbar-custom .btn-icon:hover {
+            color: #d0e0d0;
+        }
+
+        /* Main Header Styling */
+        h1 {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Main Content Area */
+        main {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        main:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Modern 3D Button */
+        .btn-3d {
+            background-color: #006400;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 100, 0, 0.2);
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+
+        .btn-3d:hover {
+            box-shadow: 0 8px 20px rgba(0, 100, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #006400;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer .footer-links a {
+            color: #c9d1da;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        footer .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 10px 0 0;
+        }
+
+        /* Card Design for Content Sections */
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-custom sticky-top p-2">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">CICS - Sta. Cruz</span>
+            <div class="d-flex align-items-center ms-auto">
+                <!-- Search Bar -->
+                <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+
+                <!-- Icons -->
+                <a class="btn-icon" href="#"><i class="bi bi-gear"></i></a>
+                <a class="btn-icon" href="#"><i class="bi bi-clock-history"></i></a>
+                <a class="btn-icon" href="index.html"><i class="bi bi-box-arrow-right"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="bi bi-speedometer2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-layout-text-window-reverse"></i> Layouts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-table"></i> Pages
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-graph-up"></i> Charts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-grid-1x2"></i> Tables
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Welcome! Russell Del Mundo</h1>
+                </div>
+
+                <!-- Content Cards with Modern Design -->
+                <div class="content-card">
+                    <h5>Area Chart</h5>
+                    <canvas id="myAreaChart"></canvas>
+                </div>
+
+                <button class="btn-3d">Upated yesterday at 00:00 PM</button>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+        <p>&copy; 2024 College of Information and Computing Sciences</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Chart.js for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('myAreaChart').getContext('2d');
+        var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(34, 139, 34, 0.8)');
+        gradient.addColorStop(1, 'rgba(34, 139, 34, 0.1)');
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mar 1', 'Mar 3', 'Mar 5', 'Mar 7', 'Mar 9', 'Mar 11', 'Mar 13'],
+                datasets: [{
+                    label: 'Cost for creating my dream desktop',
+                    data: [1300, 800, 200, 1000, 2200, 2900, 1000],
+                    backgroundColor: gradient,
+                    borderColor: 'rgba(34, 139, 34, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: 'rgba(34, 139, 34, 1)',
+                    pointHoverBackgroundColor: 'rgba(34, 139, 34, 1)',
+                    pointHoverRadius: 6,
+                    pointRadius: 4,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
